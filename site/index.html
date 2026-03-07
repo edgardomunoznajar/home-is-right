@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Is a Right -- We can't afford our future.</title>
+  <meta name="description" content="A 13-year-old did the maths. By the time they finish uni, an Adelaide house will cost $1.7 million. By the time they're 40, over $5 million. The maths is broken.">
+  <meta property="og:title" content="Home Is a Right">
+  <meta property="og:description" content="We can't afford our future. A data-driven campaign for housing as a human right in Australia.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav__logo" aria-label="Home Is a Right - return to top">
+      <svg class="nav__icon" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+        <path d="M16 3L2 15h4v14h8v-8h4v8h8V15h4L16 3z" fill="currentColor"/>
+      </svg>
+      <span class="nav__wordmark">Home Is a Right</span>
+    </a>
+    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links">
+      <li><a href="#the-maths">The Maths</a></li>
+      <li><a href="#the-gap">The Gap</a></li>
+      <li><a href="#barriers">Barriers</a></li>
+      <li><a href="#who-decides">Who Decides</a></li>
+      <li><a href="#world-watching">The Deadline</a></li>
+      <li><a href="#the-ask" class="nav__cta">Take Action</a></li>
+    </ul>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="hero" aria-label="Campaign introduction">
+    <div class="hero__content">
+      <h1 class="hero__headline">We can't afford our future.</h1>
+      <div class="hero__counters" aria-live="polite">
+        <div class="hero__counter hero__counter--house">
+          <span class="hero__counter-label">Median Adelaide house price</span>
+          <span class="hero__counter-value" data-target="940000" data-prefix="$" data-speed="house">$940,000</span>
+          <span class="hero__counter-rate">Growing ~$150/day</span>
+        </div>
+
+        <div class="hero__renter" aria-hidden="true">
+          <!-- Renter Character: Shocked pose -->
+          <svg viewBox="0 0 200 320" class="renter renter--shocked" role="img" aria-label="Renter character looking shocked at the numbers">
+            <!-- Body -->
+            <rect x="70" y="140" width="60" height="90" rx="8" fill="#1A1F3C"/>
+            <!-- Head -->
+            <circle cx="100" cy="100" r="45" fill="#F5CBA7"/>
+            <!-- Hair -->
+            <path d="M55 85 Q55 55 100 55 Q145 55 145 85 L145 75 Q145 45 100 45 Q55 45 55 75Z" fill="#1A1F3C"/>
+            <!-- Eyes - wide open (shocked) -->
+            <circle cx="82" cy="100" r="7" fill="#1A1F3C"/>
+            <circle cx="118" cy="100" r="7" fill="#1A1F3C"/>
+            <circle cx="84" cy="98" r="2.5" fill="white"/>
+            <circle cx="120" cy="98" r="2.5" fill="white"/>
+            <!-- Mouth - open O shape -->
+            <ellipse cx="100" cy="122" rx="8" ry="10" fill="#1A1F3C"/>
+            <!-- Arms - raised up in shock -->
+            <rect x="38" y="120" width="32" height="14" rx="7" fill="#F5CBA7" transform="rotate(-45 54 127)"/>
+            <rect x="130" y="120" width="32" height="14" rx="7" fill="#F5CBA7" transform="rotate(45 146 127)"/>
+            <!-- Legs -->
+            <rect x="76" y="228" width="18" height="50" rx="6" fill="#1A1F3C"/>
+            <rect x="106" y="228" width="18" height="50" rx="6" fill="#1A1F3C"/>
+            <!-- Shoes -->
+            <rect x="72" y="272" width="26" height="12" rx="6" fill="#E85D04"/>
+            <rect x="102" y="272" width="26" height="12" rx="6" fill="#E85D04"/>
+          </svg>
+        </div>
+
+        <div class="hero__counter hero__counter--salary">
+          <span class="hero__counter-label">Median graduate salary</span>
+          <span class="hero__counter-value" data-target="73000" data-prefix="$" data-speed="salary">$73,000</span>
+          <span class="hero__counter-rate">Growing ~$6/day</span>
+        </div>
+      </div>
+      <p class="hero__gap-label" aria-live="polite">One goes up. The other barely moves. You already know which one is yours.</p>
+      <a href="#the-maths" class="hero__cta">See the maths<span class="hero__arrow" aria-hidden="true"></span></a>
+    </div>
+  </section>
+
+  <!-- ============ THE MATHS ============ -->
+  <section id="the-maths" class="maths" aria-label="The mathematics of housing unaffordability">
+    <div class="maths__intro">
+      <h2 class="section-label">The Maths</h2>
+      <p class="maths__setup">A 13-year-old starting Year 7 today finishes uni around 2035. These are the numbers no one showed them.</p>
+    </div>
+
+    <div class="stat-card" data-animate>
+      <div class="stat-card__renter" aria-hidden="true">
+        <!-- Renter: Shocked -->
+        <svg viewBox="0 0 120 180" class="renter-small">
+          <rect x="40" y="80" width="40" height="55" rx="6" fill="#1A1F3C"/>
+          <circle cx="60" cy="58" r="28" fill="#F5CBA7"/>
+          <path d="M32 50 Q32 30 60 30 Q88 30 88 50 L88 42 Q88 22 60 22 Q32 22 32 42Z" fill="#1A1F3C"/>
+          <circle cx="50" cy="58" r="5" fill="#1A1F3C"/>
+          <circle cx="70" cy="58" r="5" fill="#1A1F3C"/>
+          <circle cx="51.5" cy="56.5" r="1.8" fill="white"/>
+          <circle cx="71.5" cy="56.5" r="1.8" fill="white"/>
+          <ellipse cx="60" cy="72" rx="5" ry="6" fill="#1A1F3C"/>
+          <rect x="44" y="134" width="12" height="30" rx="4" fill="#1A1F3C"/>
+          <rect x="64" y="134" width="12" height="30" rx="4" fill="#1A1F3C"/>
+          <rect x="41" y="160" width="18" height="8" rx="4" fill="#E85D04"/>
+          <rect x="61" y="160" width="18" height="8" rx="4" fill="#E85D04"/>
+        </svg>
+      </div>
+      <div class="stat-card__number" data-count="1700000" data-prefix="$">$1,700,000</div>
+      <p class="stat-card__label">An Adelaide house by the time today's Year 7 finishes uni. Not a mansion. A house.</p>
+      <span class="stat-card__source">Projection: 6.8% annual growth (long-term average) on current $940K median. <a href="#sources">Sources</a></span>
+    </div>
+
+    <div class="stat-card" data-animate>
+      <div class="stat-card__renter" aria-hidden="true">
+        <!-- Renter: Thinking -->
+        <svg viewBox="0 0 120 180" class="renter-small">
+          <rect x="40" y="80" width="40" height="55" rx="6" fill="#1A1F3C"/>
+          <circle cx="60" cy="58" r="28" fill="#F5CBA7"/>
+          <path d="M32 50 Q32 30 60 30 Q88 30 88 50 L88 42 Q88 22 60 22 Q32 22 32 42Z" fill="#1A1F3C"/>
+          <circle cx="50" cy="58" r="4" fill="#1A1F3C"/>
+          <circle cx="70" cy="58" r="4" fill="#1A1F3C"/>
+          <line x1="45" y1="72" x2="60" y2="72" stroke="#1A1F3C" stroke-width="3" stroke-linecap="round"/>
+          <!-- Hand on chin -->
+          <rect x="22" y="60" width="28" height="12" rx="6" fill="#F5CBA7" transform="rotate(15 36 66)"/>
+          <rect x="44" y="134" width="12" height="30" rx="4" fill="#1A1F3C"/>
+          <rect x="64" y="134" width="12" height="30" rx="4" fill="#1A1F3C"/>
+          <rect x="41" y="160" width="18" height="8" rx="4" fill="#E85D04"/>
+          <rect x="61" y="160" width="18" height="8" rx="4" fill="#E85D04"/>
+        </svg>
+      </div>
+      <div class="stat-card__number" data-count="95000" data-prefix="$">$95,000</div>
+      <p class="stat-card__label">What they'll earn. That's the whole salary. Before tax.</p>
+      <span class="stat-card__source">3% annual wage growth on current $73K median. <a href="#sources">Sources</a></span>
+    </div>
+
+    <div class="stat-card stat-card--accent" data-animate>
+      <div class="stat-card__number stat-card__number--large" data-count="18" data-suffix="x">18x</div>
+      <p class="stat-card__label">Eighteen years of your entire salary. Every dollar. No rent, no food, no living. Just house.</p>
+    </div>
+
+    <div class="stat-card" data-animate>
+      <div class="stat-card__number" data-count="340000" data-prefix="$">$340,000</div>
+      <p class="stat-card__label">Just the deposit. You haven't bought anything yet. This is the entrance fee.</p>
+    </div>
+
+    <div class="stat-card" data-animate>
+      <div class="stat-card__number" data-count="20" data-suffix=" years">20 years</div>
+      <p class="stat-card__label">To save that deposit solo. Saving 20% of every pay. No breaks. No emergencies. No life.</p>
+    </div>
+
+    <div class="stat-card stat-card--accent" data-animate>
+      <div class="stat-card__renter stat-card__renter--large" aria-hidden="true">
+        <!-- Renter: Holding sign -->
+        <svg viewBox="0 0 200 320" class="renter-medium">
+          <rect x="70" y="140" width="60" height="90" rx="8" fill="#1A1F3C"/>
+          <circle cx="100" cy="100" r="45" fill="#F5CBA7"/>
+          <path d="M55 85 Q55 55 100 55 Q145 55 145 85 L145 75 Q145 45 100 45 Q55 45 55 75Z" fill="#1A1F3C"/>
+          <circle cx="82" cy="100" r="5" fill="#1A1F3C"/>
+          <circle cx="118" cy="100" r="5" fill="#1A1F3C"/>
+          <line x1="82" y1="120" x2="118" y2="118" stroke="#1A1F3C" stroke-width="3" stroke-linecap="round"/>
+          <!-- Sign -->
+          <rect x="130" y="30" width="65" height="45" rx="4" fill="#E85D04"/>
+          <line x1="135" y1="48" x2="190" y2="48" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="135" y1="58" x2="175" y2="58" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Arm holding sign -->
+          <rect x="120" y="140" width="40" height="14" rx="7" fill="#F5CBA7" transform="rotate(-50 140 147)"/>
+          <rect x="40" y="155" width="32" height="14" rx="7" fill="#F5CBA7" transform="rotate(10 56 162)"/>
+          <rect x="76" y="228" width="18" height="50" rx="6" fill="#1A1F3C"/>
+          <rect x="106" y="228" width="18" height="50" rx="6" fill="#1A1F3C"/>
+          <rect x="72" y="272" width="26" height="12" rx="6" fill="#E85D04"/>
+          <rect x="102" y="272" width="26" height="12" rx="6" fill="#E85D04"/>
+        </svg>
+      </div>
+      <div class="stat-card__number stat-card__number--large">Age 40.</div>
+      <p class="stat-card__label">When you might finally buy -- if the price stayed at $1.7 million. It won't. By then it'll be over $5 million. The price runs faster than you can save. That's not a prediction. That's the maths.</p>
+    </div>
+  </section>
+
+  <!-- ============ THE GAP ============ -->
+  <section id="the-gap" class="gap" aria-label="The growing gap between house prices and wages">
+    <h2 class="section-label">The Gap</h2>
+    <div class="gap__chart-container" data-animate>
+      <div class="gap__chart" aria-label="Chart showing house price growth of 193% versus wage growth of 81% over 20 years">
+        <div class="gap__y-axis">
+          <span>+200%</span>
+          <span>+150%</span>
+          <span>+100%</span>
+          <span>+50%</span>
+          <span>0%</span>
+        </div>
+        <div class="gap__bars">
+          <div class="gap__bar-group">
+            <div class="gap__bar gap__bar--house" data-height="96.5">
+              <span class="gap__bar-value">+193%</span>
+            </div>
+            <span class="gap__bar-label">House prices<br><small>20 years</small></span>
+          </div>
+          <div class="gap__bar-group">
+            <div class="gap__bar gap__bar--wage" data-height="40.8">
+              <span class="gap__bar-value">+81%</span>
+            </div>
+            <span class="gap__bar-label">Wages<br><small>20 years</small></span>
+          </div>
+        </div>
+      </div>
+      <p class="gap__annotation">One line is your house. The other is your pay. The space between them is your life.</p>
+    </div>
+
+    <div class="gap__recent" data-animate>
+      <h3 class="gap__subhead">The last five years alone</h3>
+      <div class="gap__comparison">
+        <div class="gap__item">
+          <span class="gap__item-number">+68%</span>
+          <span class="gap__item-label">Entry-level house prices</span>
+        </div>
+        <div class="gap__vs" aria-hidden="true">vs</div>
+        <div class="gap__item">
+          <span class="gap__item-number gap__item-number--dim">+21%</span>
+          <span class="gap__item-label">Wages</span>
+        </div>
+      </div>
+      <p class="gap__footnote">The gap is not closing. It is getting worse every single year. And no one is fixing it.</p>
+    </div>
+  </section>
+
+  <!-- ============ BARRIERS ============ -->
+  <section id="barriers" class="barriers" aria-label="The compound barriers to homeownership">
+    <h2 class="section-label">The Barriers Stack</h2>
+    <p class="barriers__intro">People say "just save harder." Here's what you're actually up against. All of it. At once.</p>
+
+    <div class="barriers__stack" data-animate>
+      <div class="barrier" data-delay="0">
+        <span class="barrier__number">1</span>
+        <div class="barrier__content">
+          <strong class="barrier__title">HECS debt</strong>
+          <p class="barrier__detail">Average $28,000. Cuts your borrowing power by $50,000+. You went to uni so you could earn more. The debt from going to uni means you can borrow less. Make it make sense.</p>
+        </div>
+      </div>
+
+      <div class="barrier" data-delay="1">
+        <span class="barrier__number">2</span>
+        <div class="barrier__content">
+          <strong class="barrier__title">The rent trap</strong>
+          <p class="barrier__detail">$620-$780 per week before you save a cent. Researchers surveyed 51,238 rental listings across Australia. The number affordable on Youth Allowance: zero. Not low. Zero.</p>
+        </div>
+      </div>
+
+      <div class="barrier" data-delay="2">
+        <span class="barrier__number">3</span>
+        <div class="barrier__content">
+          <strong class="barrier__title">The deposit wall</strong>
+          <p class="barrier__detail">$155,000 to $321,000 depending on your city. Your parents' generation saved a deposit in four years. Yours takes twenty. Same country. Different rules.</p>
+        </div>
+      </div>
+
+      <div class="barrier" data-delay="3">
+        <span class="barrier__number">4</span>
+        <div class="barrier__content">
+          <strong class="barrier__title">Stamp duty on top</strong>
+          <p class="barrier__detail">$17,000 to $55,000. On top of the deposit. A tax for buying. One to three more years of saving just for the privilege.</p>
+        </div>
+      </div>
+
+      <div class="barrier" data-delay="4">
+        <span class="barrier__number">5</span>
+        <div class="barrier__content">
+          <strong class="barrier__title">Serviceability</strong>
+          <p class="barrier__detail">To actually pay the mortgage without going broke, you need a household income of $100,000 to $319,000. In Sydney that's the top 5%. The average person literally cannot afford the average house.</p>
+        </div>
+      </div>
+
+      <div class="barrier" data-delay="5">
+        <span class="barrier__number">6</span>
+        <div class="barrier__content">
+          <strong class="barrier__title">The wealth gap widens behind you</strong>
+          <p class="barrier__detail">While you're stuck saving, people who already own property get 50% richer. The median homeowner is worth $1,000,000. The median renter: $60,000. Same country. 17 times apart. The game is rigged and the gap gets worse the longer you wait.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO DECIDES ============ -->
+  <section id="who-decides" class="decides" aria-label="Who makes housing policy">
+    <h2 class="section-label">Who Decides</h2>
+
+    <div class="decides__grid" data-animate>
+      <div class="decides__stat">
+        <span class="decides__number">451</span>
+        <span class="decides__label">properties declared by 226 federal MPs and their families</span>
+      </div>
+      <div class="decides__stat">
+        <span class="decides__number">135</span>
+        <span class="decides__label">of 226 MPs own two or more properties (including homes and rentals)</span>
+      </div>
+      <div class="decides__stat">
+        <span class="decides__number">48</span>
+        <span class="decides__label">MPs collect rental income from 71 investment properties between them</span>
+      </div>
+      <div class="decides__stat decides__stat--contrast">
+        <span class="decides__number">16</span>
+        <span class="decides__label">MPs -- just 7% -- declared owning no property at all</span>
+      </div>
+    </div>
+
+    <p class="decides__caption">These are the people deciding whether you can afford a home. They already got theirs.</p>
+
+    <div class="decides__policy" data-animate>
+      <div class="decides__policy-stat">
+        <span class="decides__policy-number">$12.3 billion</span>
+        <span class="decides__policy-label">Cost of negative gearing and CGT discount per year</span>
+      </div>
+      <div class="decides__policy-stat decides__policy-stat--highlight">
+        <span class="decides__policy-number">$7.2 billion</span>
+        <span class="decides__policy-label">of that goes to the richest 10% of Australians</span>
+      </div>
+    </div>
+
+    <p class="decides__verdict">That is not a market failure. That is a policy choice. They chose this.</p>
+  </section>
+
+  <!-- ============ THE WORLD IS WATCHING ============ -->
+  <section id="world-watching" class="watching" aria-label="International pressure and the UN deadline">
+    <h2 class="section-label">The World Is Watching</h2>
+
+    <div class="watching__countdown" data-animate>
+      <p class="watching__context">120 countries asked Australia one question at the UN Human Rights Council in February 2026:</p>
+      <blockquote class="watching__question">Is housing a human right?</blockquote>
+      <p class="watching__status">The government still hasn't answered.</p>
+
+      <div class="watching__timer" aria-label="Countdown to July 2026 UN deadline">
+        <div class="watching__timer-unit">
+          <span class="watching__timer-number" id="countdown-days">--</span>
+          <span class="watching__timer-label">days</span>
+        </div>
+        <div class="watching__timer-unit">
+          <span class="watching__timer-number" id="countdown-hours">--</span>
+          <span class="watching__timer-label">hours</span>
+        </div>
+        <div class="watching__timer-unit">
+          <span class="watching__timer-number" id="countdown-minutes">--</span>
+          <span class="watching__timer-label">minutes</span>
+        </div>
+      </div>
+      <p class="watching__deadline-label">until the July 2026 UN deadline</p>
+    </div>
+
+    <div class="watching__context-block" data-animate>
+      <p>The ACT enshrined housing as a human right in September 2025. The first Australian jurisdiction to do so.</p>
+      <p><strong>South Australia has no Human Rights Act at all.</strong></p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WORKS ============ -->
+  <section id="what-works" class="works" aria-label="International models that work">
+    <h2 class="section-label">What Works Elsewhere</h2>
+    <p class="works__intro">Other countries solved this. Australia chose not to.</p>
+
+    <div class="works__grid" data-animate>
+      <div class="works__card">
+        <span class="works__country">Vienna</span>
+        <span class="works__stat">46%</span>
+        <p class="works__detail">of housing is social housing. Two-thirds of residents live in subsidised homes in the city centre.</p>
+      </div>
+      <div class="works__card">
+        <span class="works__country">Singapore</span>
+        <span class="works__stat">90%</span>
+        <p class="works__detail">of the population lives in publicly governed housing. Over one million units built.</p>
+      </div>
+      <div class="works__card">
+        <span class="works__country">Finland</span>
+        <span class="works__stat">-68%</span>
+        <p class="works__detail">reduction in long-term homelessness since 2008 using Housing First. From 18,000 homeless to 3,806.</p>
+      </div>
+      <div class="works__card works__card--contrast">
+        <span class="works__country">Australia</span>
+        <span class="works__stat">169,000</span>
+        <p class="works__detail">households on public housing waitlists. 3 affordable rentals on JobSeeker out of 51,238 listings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE ASK ============ -->
+  <section id="the-ask" class="ask" aria-label="Take action">
+    <h2 class="section-label">Do Something</h2>
+
+    <div class="ask__paths">
+      <div class="ask__path" data-animate>
+        <h3 class="ask__path-title">Sign</h3>
+        <p class="ask__path-desc">Demand SA gets a Human Rights Act that includes housing. The ACT did it. We haven't. Why not.</p>
+        <a href="https://c.org/hBjfHWZYxf" target="_blank" rel="noopener" class="ask__button ask__button--primary">Sign the petition</a>
+      </div>
+
+      <div class="ask__path" data-animate>
+        <h3 class="ask__path-title">Share</h3>
+        <p class="ask__path-desc">Send this to someone who needs to see the maths.</p>
+        <div class="ask__share-buttons">
+          <button class="ask__button ask__button--share" data-share="copy">Copy link</button>
+          <button class="ask__button ask__button--share" data-share="twitter">Share</button>
+        </div>
+      </div>
+
+      <div class="ask__path" data-animate>
+        <h3 class="ask__path-title">Tell Your Story</h3>
+        <p class="ask__path-desc">What does this mean for your life? No name needed. No face needed. Just your words.</p>
+        <form class="ask__form" id="story-form">
+          <label for="story-age" class="ask__form-label">Your age (optional)</label>
+          <input type="number" id="story-age" class="ask__input" min="13" max="99" placeholder="16">
+          <label for="story-city" class="ask__form-label">Your city (optional)</label>
+          <input type="text" id="story-city" class="ask__input" placeholder="Adelaide">
+          <label for="story-text" class="ask__form-label">Your story</label>
+          <textarea id="story-text" class="ask__textarea" rows="4" placeholder="I did the maths on buying a house..." required></textarea>
+          <button type="submit" class="ask__button ask__button--primary">Submit anonymously</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="sources">
+    <div class="footer__content">
+      <p class="footer__origin">Built by a 13-year-old in Adelaide who did the maths and couldn't look away. No face. No party. No funding. Just a calculator and a question no one wanted to answer.</p>
+
+      <div class="footer__links">
+        <div class="footer__col">
+          <h4 class="footer__heading">Sources</h4>
+          <ul>
+            <li>ABS Wage Price Index, Dec 2025</li>
+            <li>CoreLogic Home Value Index, Feb 2026</li>
+            <li>Demographia Housing Affordability, 2025</li>
+            <li>AHURI Final Report No. 427, 2024</li>
+            <li>Grattan Institute Housing Reports</li>
+            <li>Anglicare Rental Affordability Snapshot, 2025</li>
+            <li>National Housing Supply Council, 2025</li>
+          </ul>
+          <a href="RESEARCH-BIBLE.md" class="footer__download">Full Research Bible</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__heading">Follow</h4>
+          <ul>
+            <li><a href="#" rel="noopener">TikTok</a></li>
+            <li><a href="#" rel="noopener">Instagram</a></li>
+            <li><a href="#" rel="noopener">YouTube</a></li>
+            <li><a href="#" rel="noopener">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer__legal">Every number on this site comes from the ABS, RBA, CoreLogic, AHURI, Grattan Institute, or peer-reviewed research. If we can't source it, we don't say it. Check us.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

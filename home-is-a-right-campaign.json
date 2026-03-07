@@ -1,0 +1,268 @@
+{
+  "campaign": {
+    "name": "Home Is a Right",
+    "tagline": "We can't afford our future.",
+    "version": "1.0",
+    "created": "2026-03-07",
+    "owner": {
+      "age": 16,
+      "location": "Adelaide, South Australia, Australia",
+      "profile": {
+        "strengths": ["drawing", "storytelling", "data_research"],
+        "constraints": ["autistic - no face on camera"],
+        "style_reference": "Kurzgesagt"
+      }
+    },
+
+    "context": {
+      "legal_background": {
+        "problem": "No specific legal right to housing exists in Australian law or the Constitution.",
+        "current_state": "Victoria, ACT, and Queensland have Human Rights Acts but none explicitly protect housing. South Australia has no Human Rights Act.",
+        "recent_win": "ACT passed legislation in 2025 enshrining housing as a foundational social good with legal challenge mechanisms.",
+        "federal_deadline": "Australian government must respond to UN housing rights recommendations by July 2026.",
+        "goal": "Pressure South Australia and the federal government to add housing to a Human Rights Act."
+      }
+    },
+
+    "brand": {
+      "palette": {
+        "primary": "#E85D04",
+        "secondary": "#1A1F3C",
+        "accent_light_orange": "#FFF3E0",
+        "accent_light_navy": "#E8EAF6",
+        "background": "#FFFFFF",
+        "text": "#333333"
+      },
+      "typography": {
+        "style": "clean flat sans-serif",
+        "reference": "Kurzgesagt / explainer video aesthetic"
+      },
+      "handles": {
+        "suggested_instagram": "@homeisourrightau",
+        "suggested_tiktok": "@homeisourrightau",
+        "suggested_youtube": "Home Is a Right",
+        "suggested_discord": "Home Is a Right AU",
+        "petition": "Change.org"
+      }
+    },
+
+    "character": {
+      "name": "Renter",
+      "concept": "A relatable teenager navigating an absurd housing market. Not a superhero or politician — just a kid doing the maths and getting increasingly bewildered by what they find.",
+      "tone": "Frustrated but funny. Earnest. Never preachy.",
+      "required_poses": [
+        "neutral",
+        "shocked",
+        "angry",
+        "thinking",
+        "holding_sign"
+      ],
+      "visual_style": "Simple flat illustration, bold outlines, limited colour palette matching brand",
+      "reference": "Kurzgesagt bird characters — character IS the brand, creator stays anonymous"
+    },
+
+    "hook": {
+      "core_message": "We can't afford our future.",
+      "viral_question": "Should a roof over your head be a human right — yes or no?",
+      "rationale": "Binary question forces a side. Drives shares and comments automatically.",
+      "villain_frame": "Politicians who own multiple investment properties get to vote on housing policy.",
+      "key_stat": "An Australian teenager today would need to save every dollar they earn for 12+ years just to afford a deposit — before rent, food, or living."
+    },
+
+    "content_series": [
+      {
+        "id": "series_1",
+        "name": "The Maths",
+        "strength_used": "data_research",
+        "format": "Infographic / static post",
+        "concept": "Brutal, simple arithmetic. One stat. One character reaction. One angry emoji.",
+        "frequency": "Weekly",
+        "examples": [
+          "Average Adelaide house price ÷ average teen part-time wage = 47 years of saving",
+          "Australian politicians own an average of X investment properties. You own 0.",
+          "The ACT just made housing a legal right. SA hasn't. Here's the difference."
+        ]
+      },
+      {
+        "id": "series_2",
+        "name": "Renter Explains",
+        "strength_used": "storytelling",
+        "format": "Animated explainer video, 60–90 seconds",
+        "concept": "Character walks through one housing concept per episode. Script-driven. No voiceover required — text on screen or AI voice.",
+        "frequency": "Bi-weekly",
+        "examples": [
+          "Why do politicians own so many investment properties?",
+          "What is negative gearing and why should you care?",
+          "What happened in the ACT that could change everything",
+          "I tried to take the government to court over housing. Here's what I found.",
+          "Why your generation will never own homes — and what we're doing about it"
+        ]
+      },
+      {
+        "id": "series_3",
+        "name": "Real Stories",
+        "strength_used": "storytelling",
+        "format": "Illustrated story cards / carousel",
+        "concept": "Crowdsourced stories from other teenagers about their housing fears. Collected via DM or form. Turned into illustrated cards. No faces, no names required.",
+        "frequency": "Weekly",
+        "cta": "DM us your story"
+      }
+    ],
+
+    "platforms": [
+      {
+        "name": "TikTok",
+        "tier": 1,
+        "role": "engine",
+        "eligible_age": "16+",
+        "primary_use": "Viral spark and discovery",
+        "content_formats": [
+          "POV text-on-screen with trending audio",
+          "Duets with housing/cost-of-living creators",
+          "Stitches of news clips",
+          "Infographic slideshows"
+        ],
+        "algorithm_tip": "Post 3x/day for first 2 weeks. Consistency beats quality early.",
+        "tools": ["CapCut"]
+      },
+      {
+        "name": "Instagram",
+        "tier": 1,
+        "role": "amplifier",
+        "eligible_age": "16+",
+        "primary_use": "Reach older teens and parents via Reels reposts",
+        "content_formats": [
+          "Reels (repurposed from TikTok)",
+          "Carousel infographics",
+          "Story polls",
+          "Quote cards"
+        ],
+        "tools": ["Canva", "Adobe Express"]
+      },
+      {
+        "name": "YouTube",
+        "tier": 2,
+        "role": "depth_layer",
+        "eligible_age": "no restriction on creating",
+        "primary_use": "Long-form explainers, press pickup, teacher sharing",
+        "content_formats": [
+          "5–10 minute Renter Explains episodes",
+          "Campaign story / origin video"
+        ],
+        "tools": ["DaVinci Resolve (free)", "Google Slides for animation"]
+      },
+      {
+        "name": "Discord",
+        "tier": 2,
+        "role": "community_hub",
+        "eligible_age": "13+",
+        "primary_use": "Organising teens who want to act — petition drives, school poster drops, story sharing",
+        "content_formats": [
+          "Announcement channel",
+          "Story submission channel",
+          "Local action coordination"
+        ]
+      },
+      {
+        "name": "Change.org",
+        "tier": 3,
+        "role": "proof_of_momentum",
+        "primary_use": "Petition with climbing signature count used as content itself",
+        "milestones_as_content": [
+          "500 signatures in 24 hours",
+          "1,000 signatures",
+          "5,000 signatures"
+        ],
+        "ask": "Add housing to South Australia's Human Rights Act"
+      },
+      {
+        "name": "LinkedIn",
+        "tier": 3,
+        "role": "legitimiser",
+        "primary_use": "Reach journalists, politicians, lawyers, housing policy advocates",
+        "content_formats": [
+          "Campaign origin story post",
+          "Milestone announcements",
+          "Data posts linking to petition"
+        ],
+        "note": "A 16-year-old leading a housing rights campaign is inherently newsworthy to this audience"
+      }
+    ],
+
+    "amplification_strategy": {
+      "biggest_lever": "One larger Australian TikTok creator duetting a video",
+      "target_creator_profile": "Australian finance-for-young-people, cost-of-living, or youth politics creators with 50k–500k followers",
+      "outreach_approach": "Pitch a duet or stitch. Don't ask for a share — give them content to react to.",
+      "institutional_partners": [
+        "Amnesty International Australia youth network",
+        "Human Rights Law Centre",
+        "South Australia Youth Parliament",
+        "School student councils"
+      ]
+    },
+
+    "content_rules": {
+      "do": [
+        "Lead with identity and injustice, not policy",
+        "Give people a specific action (sign, share, comment your MP's name)",
+        "Use lo-fi phone-camera aesthetic for authenticity",
+        "Post character reaction to real news as it happens",
+        "Use the July 2026 UN deadline as a live countdown"
+      ],
+      "dont": [
+        "Preach or lecture",
+        "Ask people to 'raise awareness' without a specific action",
+        "Use over-produced graphics — raw beats polished for this audience",
+        "Post on Twitter/X — negligible Australian teen audience",
+        "Use policy jargon"
+      ]
+    },
+
+    "launch_plan": {
+      "week_1": [
+        { "day": 1, "task": "Character design", "detail": "Sketch Renter in 3 poses: neutral, shocked, angry", "output": "Character sheet" },
+        { "day": 2, "task": "Brand setup", "detail": "Canva account, colour palette, campaign handle registration on TikTok + Instagram", "output": "Brand kit in Canva" },
+        { "day": 3, "task": "First The Maths post", "detail": "Single brutal stat infographic with Renter reaction", "output": "1 x static infographic" },
+        { "day": 4, "task": "Launch post", "detail": "Post to TikTok (with CapCut motion) + Instagram. Pin to profile.", "output": "Live post" },
+        { "day": 5, "task": "Change.org petition", "detail": "Set up petition: 'Add housing to SA Human Rights Act'. Target: 1,000 signatures.", "output": "Live petition link" },
+        { "day": 6, "task": "Renter Explains script", "detail": "Write script for Episode 1: 'Why your generation will never own a home'", "output": "Script draft" },
+        { "day": 7, "task": "Review + plan week 2", "detail": "Check analytics, refine based on what resonated", "output": "Week 2 content plan" }
+      ]
+    },
+
+    "success_metrics": {
+      "phase_1_30_days": {
+        "petition_signatures": 1000,
+        "tiktok_followers": 500,
+        "instagram_followers": 300,
+        "goal": "Proof of concept — show momentum exists"
+      },
+      "phase_2_90_days": {
+        "petition_signatures": 5000,
+        "media_mentions": 1,
+        "goal": "Media pickup + institutional partner engagement"
+      },
+      "phase_3_july_2026": {
+        "petition_signatures": 20000,
+        "goal": "Submission to federal government UN response window"
+      }
+    },
+
+    "tools_stack": {
+      "illustration": ["Procreate (iPad)", "Adobe Fresco (free)"],
+      "infographics": ["Canva (free)", "Adobe Express (free tier)"],
+      "video_editing": ["CapCut (free)", "DaVinci Resolve (free)"],
+      "animation_starter": ["Google Slides", "PowerPoint — slide elements to fake motion"],
+      "petition": ["Change.org"],
+      "community": ["Discord"],
+      "scheduling": ["Later (free tier)", "Buffer (free tier)"]
+    },
+
+    "political_window": {
+      "deadline": "July 2026",
+      "event": "Australian government must formally respond to UN Universal Periodic Review recommendations on housing rights",
+      "opportunity": "A teen-led campaign with measurable momentum landing before this deadline has direct political leverage",
+      "reviewers": "120+ countries called on Australia to improve housing rights at the January 2026 UN Human Rights Council review"
+    }
+  }
+}
