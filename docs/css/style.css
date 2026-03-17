@@ -663,11 +663,19 @@ img, svg { max-width: 100%; height: auto; }
 }
 
 .decides .section-label,
+.decides__setup,
 .decides__caption,
 .decides__verdict {
   max-width: var(--max-narrow);
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+.decides__setup {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
 }
 
 .decides__grid {
@@ -967,6 +975,60 @@ img, svg { max-width: 100%; height: auto; }
   margin: 0 auto;
 }
 
+.ask__demands {
+  max-width: var(--max-narrow);
+  margin: var(--space-lg) auto var(--space-xl);
+  padding: var(--space-lg);
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 12px;
+}
+
+.ask__demands-title {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: var(--space-md);
+}
+
+.ask__demands-list {
+  list-style: none;
+  counter-reset: demands;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.ask__demands-list li {
+  counter-increment: demands;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.ask__demands-list li::before {
+  content: counter(demands);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: var(--orange);
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+}
+
 .ask__paths {
   display: grid;
   grid-template-columns: 1fr;
@@ -1082,8 +1144,19 @@ img, svg { max-width: 100%; height: auto; }
   min-height: 100px;
 }
 
+.ask__privacy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: var(--space-xs);
+}
+
 .ask__form .ask__button {
   margin-top: var(--space-sm);
+}
+
+.footer__coming-soon {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* ============ FOOTER ============ */

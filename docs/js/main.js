@@ -78,7 +78,7 @@
 
   const startCountdown = () => {
     // July 2026 UN deadline -- using July 1 as target
-    const deadline = new Date('2026-07-01T00:00:00+10:00').getTime();
+    const deadline = new Date('2028-02-27T00:00:00+10:00').getTime();
 
     const update = () => {
       const now = Date.now();
@@ -197,7 +197,7 @@
         const type = btn.dataset.share;
         const url = window.location.href;
         const text =
-          "A kid starting high school today in Adelaide won't afford a house until they're nearly 40. The maths no longer works.";
+          "I'm 13. By the time I'm 40, a house in Adelaide will cost $5.5 million. I did the maths. No one else would.";
 
         if (type === 'copy') {
           navigator.clipboard
