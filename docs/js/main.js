@@ -221,38 +221,6 @@
     });
   };
 
-  // ============ STORY FORM ============
-
-  const initForm = () => {
-    const form = document.getElementById('story-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
-      btn.textContent = 'Thank you. Your story matters.';
-      btn.disabled = true;
-      btn.style.background = 'var(--navy)';
-
-      // In production, this would POST to an API
-      // For now, store locally
-      const story = {
-        age: document.getElementById('story-age').value,
-        city: document.getElementById('story-city').value,
-        text: document.getElementById('story-text').value,
-        timestamp: new Date().toISOString(),
-      };
-
-      try {
-        const stories = JSON.parse(localStorage.getItem('hiar-stories') || '[]');
-        stories.push(story);
-        localStorage.setItem('hiar-stories', JSON.stringify(stories));
-      } catch (err) {
-        // Silent fail -- localStorage may not be available
-      }
-    });
-  };
-
   // ============ SMOOTH SCROLL FOR ANCHOR LINKS ============
 
   const initSmoothScroll = () => {
@@ -279,7 +247,6 @@
     startCountdown();
     initNav();
     initShare();
-    initForm();
     initSmoothScroll();
   });
 })();

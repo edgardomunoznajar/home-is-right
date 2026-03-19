@@ -29,9 +29,15 @@
     }
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+            script-src 'self';
+            style-src 'self';
+            font-src 'self';
+            img-src 'self' data:;
+            connect-src 'none';
+            frame-ancestors 'none';">
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -464,6 +470,7 @@
       </div>
 
       <p class="footer__legal">Every number on this site comes from the ABS, RBA, CoreLogic, AHURI, Grattan Institute, or peer-reviewed research. If we can't source it, we don't say it. We don't need to exaggerate. The truth is bad enough.</p>
+      <p class="footer__verify"><a href="https://github.com/edgardomunoznajar/home-is-right" target="_blank" rel="noopener">View source on GitHub</a> — verify this is the real site.</p>
     </div>
   </footer>
 
