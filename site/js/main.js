@@ -269,6 +269,50 @@
     });
   };
 
+  // ============ GOOGLE ADS CONVERSION TRACKING ============
+
+  const initConversionTracking = () => {
+    // Track petition button clicks
+    // REPLACE AW-18026262582/YYYYYYYYYY with your actual conversion action ID
+    document.querySelectorAll('a[href*="c.org/hBjfHWZYxf"]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            send_to: 'AW-18026262582/YYYYYYYYYY',
+            event_callback: function () {},
+          });
+        }
+      });
+    });
+
+    // Track share button clicks as secondary conversions
+    document.querySelectorAll('[data-share]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            send_to: 'AW-18026262582/ZZZZZZZZZZ',
+            value: 0.5,
+            currency: 'AUD',
+          });
+        }
+      });
+    });
+
+    // Track story form submissions
+    const form = document.getElementById('story-form');
+    if (form) {
+      form.addEventListener('submit', () => {
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', {
+            send_to: 'AW-18026262582/WWWWWWWWWW',
+            value: 1.0,
+            currency: 'AUD',
+          });
+        }
+      });
+    }
+  };
+
   // ============ INIT ============
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -281,5 +325,6 @@
     initShare();
     initForm();
     initSmoothScroll();
+    initConversionTracking();
   });
 })();
