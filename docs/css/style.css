@@ -145,6 +145,12 @@ img, svg { max-width: 100%; height: auto; }
   .nav__wordmark { display: inline; }
 }
 
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
 .nav__toggle {
   display: flex;
   flex-direction: column;
@@ -205,20 +211,24 @@ img, svg { max-width: 100%; height: auto; }
 
 .nav__cta {
   background: var(--orange);
-  color: var(--white) !important;
-  padding: var(--space-xs) var(--space-sm) !important;
+  color: var(--white);
+  padding: var(--space-xs) var(--space-sm);
   border-radius: 6px;
   text-align: center;
-  font-weight: 600 !important;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 .nav__cta:hover {
   background: var(--orange-dark);
-  color: var(--white) !important;
+  color: var(--white);
 }
 
 @media (min-width: 768px) {
   .nav__toggle { display: none; }
+  .nav__right { gap: var(--space-md); }
 
   .nav__links {
     display: flex;
