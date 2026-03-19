@@ -226,6 +226,19 @@ img, svg { max-width: 100%; height: auto; }
   color: var(--white);
 }
 
+.nav__cta--share {
+  background: transparent;
+  color: var(--orange);
+  border: 2px solid var(--orange);
+  cursor: pointer;
+  font-family: var(--font-main);
+}
+
+.nav__cta--share:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+
 @media (min-width: 768px) {
   .nav__toggle { display: none; }
   .nav__right { gap: var(--space-md); }
@@ -1167,6 +1180,66 @@ img, svg { max-width: 100%; height: auto; }
 .footer__coming-soon {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============ FIXED CTA BAR ============ */
+
+.fixed-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  display: flex;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+  justify-content: center;
+}
+
+.fixed-cta__btn {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 6px;
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  flex: 1;
+  max-width: 12rem;
+}
+
+.fixed-cta__btn--action {
+  background: var(--orange);
+  color: var(--white);
+  border: 2px solid var(--orange);
+}
+
+.fixed-cta__btn--action:hover {
+  background: var(--orange-dark);
+  border-color: var(--orange-dark);
+  color: var(--white);
+}
+
+.fixed-cta__btn--share {
+  background: transparent;
+  color: var(--orange);
+  border: 2px solid var(--orange);
+}
+
+.fixed-cta__btn--share:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+
+/* Add bottom padding to footer so fixed bar doesn't cover content */
+.footer {
+  padding-bottom: 5rem;
 }
 
 /* ============ FOOTER ============ */
