@@ -74,36 +74,6 @@
     if (chart) observer.observe(chart);
   };
 
-  // ============ COUNTDOWN TIMER ============
-
-  const startCountdown = () => {
-    // Federal election date
-    const deadline = new Date('2025-05-03T00:00:00+10:00').getTime();
-
-    const update = () => {
-      const now = Date.now();
-      const diff = deadline - now;
-
-      if (diff <= 0) {
-        document.getElementById('countdown-days').textContent = '0';
-        document.getElementById('countdown-hours').textContent = '0';
-        document.getElementById('countdown-minutes').textContent = '0';
-        return;
-      }
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-      document.getElementById('countdown-days').textContent = days;
-      document.getElementById('countdown-hours').textContent = hours;
-      document.getElementById('countdown-minutes').textContent = minutes;
-    };
-
-    update();
-    setInterval(update, 60000);
-  };
-
   // ============ NAV ============
 
   const initNav = () => {
@@ -244,7 +214,6 @@
     animateBarriers();
     animateBars();
     animateHeroCounters();
-    startCountdown();
     initNav();
     initShare();
     initSmoothScroll();
