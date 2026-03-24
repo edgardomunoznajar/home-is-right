@@ -77,8 +77,8 @@
   // ============ COUNTDOWN TIMER ============
 
   const startCountdown = () => {
-    // July 2026 UN deadline -- using July 1 as target
-    const deadline = new Date('2028-02-27T00:00:00+10:00').getTime();
+    // Federal election date
+    const deadline = new Date('2025-05-03T00:00:00+10:00').getTime();
 
     const update = () => {
       const now = Date.now();
