@@ -1,2 +1,7 @@
 CAMPAIGN-BRIEF.md
 .env
+
+# Political outreach — contains PII (emails, research, letters)
+political-outreach/
+political-outreach-fixed/
+political-outreach-lora/

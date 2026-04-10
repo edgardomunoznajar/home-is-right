@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Write to Your MP | Home Is a Right</title>
+  <meta name="description" content="Write to your federal MP or Senator about housing affordability. Pre-written letters, personalised to each politician's stance. Takes 2 minutes.">
+  <meta property="og:title" content="Write to Your MP | Home Is a Right">
+  <meta property="og:description" content="226 politicians. 226 letters. Find yours and send it. Takes 2 minutes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://righttohousing.com.au/write">
+  <link rel="canonical" href="https://righttohousing.com.au/write">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+            script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net;
+            style-src 'self' 'unsafe-inline';
+            font-src 'self';
+            img-src 'self' data: https://www.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.au;
+            connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://googleads.g.doubleclick.net;
+            frame-ancestors 'none';">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18026262582"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18026262582');
+  </script>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Write tool styles */
+    .write-hero {
+      padding: 7rem 1.5rem 3rem;
+      text-align: center;
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+    .write-hero__headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: #1A1F3C;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .write-hero__sub {
+      font-size: 1.15rem;
+      color: #5A5E78;
+      max-width: 36rem;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+    .write-hero__stats {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .write-hero__stat {
+      text-align: center;
+    }
+    .write-hero__stat-num {
+      display: block;
+      font-family: 'Space Mono', monospace;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #E85D04;
+    }
+    .write-hero__stat-label {
+      font-size: 0.85rem;
+      color: #5A5E78;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Search */
+    .search {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 2rem;
+    }
+    .search__box {
+      position: relative;
+      max-width: 32rem;
+      margin: 0 auto 1.5rem;
+    }
+    .search__input {
+      width: 100%;
+      padding: 1rem 1.25rem 1rem 3rem;
+      border: 2px solid #E8EAF6;
+      border-radius: 12px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      color: #1A1F3C;
+      background: #fff;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .search__input:focus {
+      outline: none;
+      border-color: #E85D04;
+    }
+    .search__input::placeholder {
+      color: #A0A3B5;
+    }
+    .search__icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #A0A3B5;
+      pointer-events: none;
+    }
+    .search__filters {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .search__filter {
+      padding: 0.5rem 1rem;
+      border: 2px solid #E8EAF6;
+      border-radius: 8px;
+      background: #fff;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      color: #5A5E78;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .search__filter:hover {
+      border-color: #E85D04;
+      color: #E85D04;
+    }
+    .search__filter--active {
+      background: #E85D04;
+      border-color: #E85D04;
+      color: #fff;
+    }
+    .search__count {
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      color: #5A5E78;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Results grid */
+    .results {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+    .results__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .rep-card {
+      border: 2px solid #E8EAF6;
+      border-radius: 12px;
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: #fff;
+    }
+    .rep-card:hover {
+      border-color: #E85D04;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(232, 93, 4, 0.1);
+    }
+    .rep-card__name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #1A1F3C;
+      margin-bottom: 0.25rem;
+    }
+    .rep-card__detail {
+      font-size: 0.85rem;
+      color: #5A5E78;
+      line-height: 1.4;
+    }
+    .rep-card__party {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.5rem;
+    }
+    .rep-card__party--alp { background: #fee2e2; color: #991b1b; }
+    .rep-card__party--lp, .rep-card__party--lnp, .rep-card__party--clp { background: #dbeafe; color: #1e40af; }
+    .rep-card__party--np { background: #d1fae5; color: #065f46; }
+    .rep-card__party--ag { background: #dcfce7; color: #166534; }
+    .rep-card__party--ind { background: #fef3c7; color: #92400e; }
+    .rep-card__party--on { background: #fce7f3; color: #9d174d; }
+    .rep-card__party--jln { background: #ede9fe; color: #5b21b6; }
+    .rep-card__party--other { background: #f3f4f6; color: #374151; }
+    .rep-card__chamber {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: #A0A3B5;
+      text-transform: uppercase;
+    }
+
+    /* Letter modal */
+    .letter-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 31, 60, 0.7);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 2rem 1rem;
+    }
+    .letter-overlay--active {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .letter {
+      background: #fff;
+      border-radius: 16px;
+      max-width: 48rem;
+      width: 100%;
+      padding: 2.5rem;
+      position: relative;
+      margin: 2rem auto;
+    }
+    .letter__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #5A5E78;
+      cursor: pointer;
+      padding: 0.5rem;
+      line-height: 1;
+    }
+    .letter__close:hover { color: #E85D04; }
+    .letter__to {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.85rem;
+      color: #5A5E78;
+      margin-bottom: 0.25rem;
+    }
+    .letter__subject {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #1A1F3C;
+      margin-bottom: 1.5rem;
+    }
+    .letter__name-input {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #E8EAF6;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      color: #1A1F3C;
+      margin-bottom: 1.5rem;
+      box-sizing: border-box;
+    }
+    .letter__name-input:focus {
+      outline: none;
+      border-color: #E85D04;
+    }
+    .letter__body {
+      width: 100%;
+      min-height: 400px;
+      padding: 1rem;
+      border: 2px solid #E8EAF6;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      color: #1A1F3C;
+      line-height: 1.7;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    .letter__body:focus {
+      outline: none;
+      border-color: #E85D04;
+    }
+    .letter__actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .letter__btn {
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .letter__btn--email {
+      background: #E85D04;
+      color: #fff;
+    }
+    .letter__btn--email:hover {
+      background: #d14e00;
+    }
+    .letter__btn--copy {
+      background: #fff;
+      color: #1A1F3C;
+      border-color: #E8EAF6;
+    }
+    .letter__btn--copy:hover {
+      border-color: #E85D04;
+      color: #E85D04;
+    }
+    .letter__btn--copied {
+      border-color: #16a34a;
+      color: #16a34a;
+    }
+    .letter__tip {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #5A5E78;
+      line-height: 1.5;
+    }
+
+    /* How it works */
+    .how {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+    .how__steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .how__step {
+      text-align: center;
+      padding: 1.5rem;
+    }
+    .how__step-num {
+      display: inline-flex;
+      width: 2.5rem;
+      height: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #E85D04;
+      color: #fff;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .how__step-text {
+      font-size: 0.95rem;
+      color: #5A5E78;
+      line-height: 1.5;
+    }
+
+    /* Back link */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #E85D04;
+      text-decoration: none;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 7rem 1.5rem 0;
+      max-width: 72rem;
+      margin: 0 auto;
+      display: block;
+    }
+    .back:hover { text-decoration: underline; }
+
+    /* Footer overrides for this page */
+    .write-footer {
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      border-top: 2px solid #E8EAF6;
+    }
+    .write-footer p {
+      font-size: 0.85rem;
+      color: #5A5E78;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+    .write-footer a {
+      color: #E85D04;
+    }
+
+    @media (max-width: 640px) {
+      .letter { padding: 1.5rem; margin: 1rem auto; }
+      .letter-overlay { padding: 0.5rem; }
+      .results__grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav__logo" aria-label="Home Is a Right - return to home">
+      <svg class="nav__icon" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true">
+        <path d="M16 3L2 15h4v14h8v-8h4v8h8V15h4L16 3z" fill="currentColor"/>
+      </svg>
+      <span class="nav__wordmark">Home Is a Right</span>
+    </a>
+  </nav>
+
+  <!-- BACK -->
+  <a href="/" class="back">&larr; Back to the maths</a>
+
+  <!-- HERO -->
+  <section class="write-hero">
+    <h1 class="write-hero__headline">Write to your MP in 2 minutes.</h1>
+    <p class="write-hero__sub">226 politicians decide your housing future. We wrote a letter to every single one. Find yours, put your name on it, and send it.</p>
+    <div class="write-hero__stats">
+      <div class="write-hero__stat">
+        <span class="write-hero__stat-num">226</span>
+        <span class="write-hero__stat-label">Politicians</span>
+      </div>
+      <div class="write-hero__stat">
+        <span class="write-hero__stat-num">226</span>
+        <span class="write-hero__stat-label">Letters ready</span>
+      </div>
+      <div class="write-hero__stat">
+        <span class="write-hero__stat-num">2 min</span>
+        <span class="write-hero__stat-label">Your time</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how">
+    <div class="how__steps">
+      <div class="how__step">
+        <span class="how__step-num">1</span>
+        <p class="how__step-text">Search for your MP or Senator by name, electorate, or state</p>
+      </div>
+      <div class="how__step">
+        <span class="how__step-num">2</span>
+        <p class="how__step-text">Click their card to see a letter tailored to their party and stance</p>
+      </div>
+      <div class="how__step">
+        <span class="how__step-num">3</span>
+        <p class="how__step-text">Add your name, edit if you want, then email or copy it</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH -->
+  <section class="search">
+    <div class="search__box">
+      <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search__input" id="searchInput" placeholder="Search by name, electorate, or state..." autocomplete="off">
+    </div>
+    <div class="search__filters" id="stateFilters">
+      <button class="search__filter search__filter--active" data-state="all">All</button>
+      <button class="search__filter" data-state="NSW">NSW</button>
+      <button class="search__filter" data-state="VIC">VIC</button>
+      <button class="search__filter" data-state="QLD">QLD</button>
+      <button class="search__filter" data-state="SA">SA</button>
+      <button class="search__filter" data-state="WA">WA</button>
+      <button class="search__filter" data-state="TAS">TAS</button>
+      <button class="search__filter" data-state="ACT">ACT</button>
+      <button class="search__filter" data-state="NT">NT</button>
+    </div>
+    <div class="search__count" id="resultCount">Loading representatives...</div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results">
+    <div class="results__grid" id="resultsGrid"></div>
+  </section>
+
+  <!-- LETTER MODAL -->
+  <div class="letter-overlay" id="letterOverlay">
+    <div class="letter" id="letterContent">
+      <button class="letter__close" id="letterClose" aria-label="Close letter">&times;</button>
+      <div class="letter__to" id="letterTo"></div>
+      <div class="letter__subject" id="letterSubject"></div>
+      <input type="text" class="letter__name-input" id="senderName" placeholder="Your name (first name is fine)">
+      <textarea class="letter__body" id="letterBody"></textarea>
+      <div class="letter__actions">
+        <a class="letter__btn letter__btn--email" id="emailBtn" href="#">Open in email app</a>
+        <button class="letter__btn letter__btn--copy" id="copyBtn">Copy letter</button>
+      </div>
+      <p class="letter__tip">Edit the letter however you want. Personal touches make it stronger. The data is already sourced.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="write-footer">
+    <p>Every letter references peer-reviewed data from the ABS, CoreLogic, AHURI, Anglicare, and Grattan Institute.</p>
+    <p>Built by a 16-year-old in Adelaide. <a href="/">righttohousing.com.au</a> | <a href="https://www.change.org/p/i-m-13-i-ll-be-past-40-before-i-can-afford-a-house-australia-has-a-right-to-housing" target="_blank" rel="noopener">Sign the petition</a></p>
+  </footer>
+
+  <script>
+  (function() {
+    'use strict';
+
+    // Letter templates keyed by template type
+    const TEMPLATES = {
+      labor_backbench: {
+        subject: 'A housing crisis your government can fix — from a supporter of Home Is a Right',
+        body: `Dear {{TITLE}} {{NAME}},
+
+I'm writing to you as your constituent in {{ELECTORATE}} and a supporter of the Home Is a Right campaign (righttohousing.com.au).
+
+Your government has the numbers to act on housing. The Treasurer is signalling reform. The Senate maths works: Labor plus Greens plus David Pocock equals 39 — exactly the majority needed. The crossbench is ready. The question is whether the backbench will push for bold action or settle for half-measures.
+
+Here are the numbers I need you to sit with:
+
+- The median Australian house costs $1,005,418. It grows faster than wages every single year.
+- House prices have risen 193% in 20 years. Wages rose 81%. The gap is accelerating.
+- Negative gearing and the CGT discount cost $12.3 billion a year. $7.2 billion goes to the richest 10%.
+- 135 of 226 federal MPs own two or more properties. 48 collect rent from 71 investment properties.
+- The Anglicare Rental Affordability Snapshot found zero rentals affordable on Youth Allowance. Not low. Zero.
+
+The May budget is a real opportunity to do something structural. The OECD recommended reform in January 2026. The Senate CGT inquiry recommended reform in March 2026. Your own Treasurer has warned of "hard decisions."
+
+I am asking you to support those hard decisions. Limit negative gearing. Reduce the CGT discount. Redirect the savings into building homes people can actually afford.
+
+An entire generation is watching. We will remember who acted and who looked away.
+
+Respectfully,
+{{SENDER}}
+{{ELECTORATE}}, {{STATE}}
+
+Home Is a Right — righttohousing.com.au
+Petition: change.org/righttohousing_aus`
+      },
+
+      coalition: {
+        subject: 'Supply alone hasn\'t worked for 20 years — the data from your constituent',
+        body: `Dear {{TITLE}} {{NAME}},
+
+I'm a constituent in {{ELECTORATE}} and a supporter of the Home Is a Right campaign (righttohousing.com.au). I'm writing because the Coalition's position on housing affordability doesn't match the evidence, and I'd like to share the numbers.
+
+The Coalition says supply is the answer. Australia has been trying supply-side solutions for two decades. In that time:
+
+- House prices rose 193%. Wages rose 81%.
+- The median house went from roughly $320,000 to over $1,000,000.
+- Year 1 of the Housing Accord: 174,030 homes built vs 240,000 needed — a 27.5% shortfall.
+- No state is forecast to meet its Housing Accord target.
+- Construction productivity is 12% lower than 30 years ago.
+
+Supply matters. But supply alone has never fixed a housing crisis where the demand side is broken. And our demand side is broken:
+
+- Negative gearing and the CGT discount cost $12.3 billion a year.
+- $7.2 billion of that goes to the richest 10% of Australians.
+- This money actively subsidises investors to outbid first home buyers.
+
+New Zealand removed interest deductibility for existing investment properties in 2021. Their market adjusted without collapse. The evidence exists.
+
+I also want to note: 135 of 226 federal MPs own two or more properties. When the Coalition says "don't touch negative gearing," I have to ask — who exactly is being protected?
+
+I'm asking you to reconsider the evidence. Supply plus demand-side reform. Not one or the other.
+
+Respectfully,
+{{SENDER}}
+{{ELECTORATE}}, {{STATE}}
+
+Home Is a Right — righttohousing.com.au
+Petition: change.org/righttohousing_aus`
+      },
+
+      greens: {
+        subject: 'Hold the line on housing reform — from a supporter of Home Is a Right',
+        body: `Dear {{TITLE}} {{NAME}},
+
+I'm writing as your constituent in {{ELECTORATE}} and a supporter of the Home Is a Right campaign (righttohousing.com.au).
+
+Thank you. The Greens have been the strongest voice in Parliament on housing tax reform. The Senate inquiries into the CGT discount and intergenerational housing inequity have set the agenda. Without the Greens, this conversation wouldn't be happening.
+
+I'm writing to ask you to hold the line — and to be strategic about it.
+
+The numbers:
+- $12.3 billion a year in negative gearing and CGT tax breaks, $7.2 billion to the richest 10%.
+- 135 of 226 MPs own 2+ properties. 48 collect rent. The conflict of interest is structural.
+- House prices +193% in 20 years vs wages +81%. The gap destroys futures.
+
+Labor is signalling CGT reform for the May budget. The Treasurer is modelling a reduction from 50% to 33%. It's not enough — but it's movement. The Senate maths work: Labor (28) + Greens (10) + Pocock (1) = 39.
+
+My ask: push for more, but don't let perfect be the enemy of progress. If real reform is on the table — even partial reform — please help it pass. A generation is counting on the adults in the room to take what they can get and then push for more.
+
+The Greens have the leverage. Use it wisely.
+
+Respectfully,
+{{SENDER}}
+{{ELECTORATE}}, {{STATE}}
+
+Home Is a Right — righttohousing.com.au
+Petition: change.org/righttohousing_aus`
+      },
+
+      one_nation: {
+        subject: 'Your party\'s own platform supports housing tax reform — will you vote for it?',
+        body: `Dear {{TITLE}} {{NAME}},
+
+I'm a constituent and a supporter of the Home Is a Right campaign (righttohousing.com.au). I'm writing about something specific: consistency.
+
+One Nation's platform supports phasing out investor tax concessions. The party's housing policy calls for a five-year GST pause on building materials and super-for-housing. Yet voting records on TheyVoteForYou show One Nation senators have consistently voted against housing affordability measures.
+
+Here is the crisis in numbers:
+- House prices: +193% in 20 years. Wages: +81%.
+- Negative gearing and CGT discount: $12.3 billion/year. $7.2 billion to the richest 10%.
+- 135 of 226 MPs own 2+ properties. Only 16 own nothing.
+- Zero rentals affordable on Youth Allowance out of 51,238 surveyed.
+
+If One Nation believes ordinary Australians are being left behind — and I believe you do — then housing tax reform is the most direct way to act on that belief. The numbers are there. The Senate crossbench can make it happen.
+
+I'm asking you to vote consistently with your own platform. Your constituents in {{STATE}} are watching.
+
+Respectfully,
+{{SENDER}}
+
+Home Is a Right — righttohousing.com.au
+Petition: change.org/righttohousing_aus`
+      },
+
+      crossbench: {
+        subject: 'You hold the balance on housing — from a supporter of Home Is a Right',
+        body: `Dear {{TITLE}} {{NAME}},
+
+I'm writing as a supporter of the Home Is a Right campaign (righttohousing.com.au) and as someone who believes crossbench voices are essential to housing reform.
+
+The Senate numbers on housing tax reform are razor-thin. Every crossbench vote matters. Here's why this matters:
+
+- The median Australian house costs over $1 million. It grows faster than wages every year.
+- House prices: +193% in 20 years. Wages: +81%. The gap is accelerating.
+- Negative gearing and CGT discount: $12.3 billion/year in tax breaks. $7.2 billion to the richest 10%.
+- 135 of 226 federal MPs own 2+ properties. Only 16 own nothing. The people making housing policy are personally invested in the status quo.
+- Zero rentals out of 51,238 surveyed are affordable on Youth Allowance.
+
+The May budget is the critical moment. The OECD has recommended reform. The Senate CGT inquiry has recommended reform. The crossbench has the power to make it happen.
+
+Labor (28) + Greens (10) + Pocock (1) = 39, the bare majority. But every additional crossbench vote strengthens the mandate and makes it harder for anyone to back down.
+
+I'm asking you to support CGT and negative gearing reform when the vote comes. An entire generation's future depends on it.
+
+Respectfully,
+{{SENDER}}
+
+Home Is a Right — righttohousing.com.au
+Petition: change.org/righttohousing_aus`
+      },
+
+      custom: {
+        subject: 'Housing reform matters — from a supporter of Home Is a Right',
+        body: `Dear {{TITLE}} {{NAME}},
+
+I'm writing as a supporter of the Home Is a Right campaign (righttohousing.com.au) to ask for your support on housing affordability reform.
+
+The numbers are stark:
+- Median Australian house: over $1 million, growing faster than wages every year.
+- House prices: +193% in 20 years. Wages: +81%.
+- Negative gearing and CGT discount: $12.3 billion/year. $7.2 billion to the richest 10%.
+- 135 of 226 federal MPs own 2+ properties. The conflict of interest is structural.
+- Zero rentals affordable on Youth Allowance out of 51,238 surveyed.
+
+This campaign was started by a 16-year-old in Adelaide who did the maths and found that by the time they're 40, a house will cost $5.5 million. Thousands of Australians have joined because the numbers speak for themselves.
+
+I'm asking you to support limiting negative gearing and reducing the CGT discount for investors with multiple properties. The OECD recommended it. The Senate inquiry recommended it. The evidence is overwhelming.
+
+Please act on what you already know.
+
+Respectfully,
+{{SENDER}}
+
+Home Is a Right — righttohousing.com.au
+Petition: change.org/righttohousing_aus`
+      }
+    };
+
+    let allReps = [];
+    let currentState = 'all';
+    let currentSearch = '';
+
+    function getPartyClass(party) {
+      if (party.includes('Labor')) return 'alp';
+      if (party.includes('Liberal National')) return 'lnp';
+      if (party.includes('Liberal')) return 'lp';
+      if (party.includes('National')) return 'np';
+      if (party.includes('Greens')) return 'ag';
+      if (party.includes('Independent') || party.includes('Voice')) return 'ind';
+      if (party.includes('One Nation')) return 'on';
+      if (party.includes('Lambie')) return 'jln';
+      if (party.includes('Country Liberal')) return 'clp';
+      return 'other';
+    }
+
+    function getTitle(rep) {
+      if (rep.c === 'Senate') return 'Senator';
+      return 'MP';
+    }
+
+    function getPartyShort(party) {
+      if (party.includes('Labor')) return 'Labor';
+      if (party.includes('Liberal National')) return 'LNP';
+      if (party.includes('Liberal')) return 'Liberal';
+      if (party.includes('National')) return 'National';
+      if (party.includes('Greens')) return 'Greens';
+      if (party.includes('One Nation')) return 'One Nation';
+      if (party.includes('Lambie')) return 'JLN';
+      if (party.includes('Independent')) return 'Independent';
+      if (party.includes('Voice')) return "Aus Voice";
+      if (party.includes('Country Liberal')) return 'CLP';
+      if (party.includes('United Australia')) return 'UAP';
+      if (party.includes('Centre Alliance')) return 'Centre Alliance';
+      if (party.includes('Katter')) return 'KAP';
+      return party;
+    }
+
+    function renderCards(reps) {
+      var grid = document.getElementById('resultsGrid');
+      var count = document.getElementById('resultCount');
+
+      if (reps.length === 0) {
+        grid.innerHTML = '<p style="text-align:center;color:#5A5E78;grid-column:1/-1;">No representatives found. Try a different search.</p>';
+        count.textContent = '0 representatives';
+        return;
+      }
+
+      count.textContent = reps.length + ' representative' + (reps.length !== 1 ? 's' : '');
+
+      grid.innerHTML = reps.map(function(rep) {
+        var pc = getPartyClass(rep.p);
+        var elText = rep.c === 'Senate' ? 'Senator for ' + rep.s : rep.el + ', ' + rep.s;
+        return '<div class="rep-card" data-email="' + rep.e + '" data-name="' + rep.n + '" data-el="' + rep.el + '" data-state="' + rep.s + '" data-party="' + rep.p + '" data-chamber="' + rep.c + '" data-template="' + rep.t + '">' +
+          '<span class="rep-card__chamber">' + rep.c + '</span>' +
+          '<div class="rep-card__name">' + rep.n + '</div>' +
+          '<div class="rep-card__detail">' + elText + '</div>' +
+          '<span class="rep-card__party rep-card__party--' + pc + '">' + getPartyShort(rep.p) + '</span>' +
+          '</div>';
+      }).join('');
+    }
+
+    function filterReps() {
+      var q = currentSearch.toLowerCase();
+      var filtered = allReps.filter(function(rep) {
+        var matchState = currentState === 'all' || rep.s === currentState;
+        var matchSearch = !q ||
+          rep.n.toLowerCase().indexOf(q) !== -1 ||
+          rep.el.toLowerCase().indexOf(q) !== -1 ||
+          rep.s.toLowerCase().indexOf(q) !== -1 ||
+          rep.p.toLowerCase().indexOf(q) !== -1;
+        return matchState && matchSearch;
+      });
+      renderCards(filtered);
+    }
+
+    function openLetter(rep) {
+      var template = TEMPLATES[rep.template] || TEMPLATES.custom;
+      var title = rep.chamber === 'Senate' ? 'Senator' : '';
+      var elDisplay = rep.chamber === 'Senate' ? rep.state : rep.el;
+
+      document.getElementById('letterTo').textContent = 'To: ' + rep.email;
+      document.getElementById('letterSubject').textContent = template.subject;
+
+      var body = template.body
+        .replace(/\{\{TITLE\}\}/g, title)
+        .replace(/\{\{NAME\}\}/g, rep.name)
+        .replace(/\{\{ELECTORATE\}\}/g, elDisplay)
+        .replace(/\{\{STATE\}\}/g, rep.state)
+        .replace(/\{\{SENDER\}\}/g, '[Your name]');
+
+      document.getElementById('letterBody').value = body;
+      document.getElementById('senderName').value = '';
+
+      var emailBtn = document.getElementById('emailBtn');
+      emailBtn.dataset.email = rep.email;
+      emailBtn.dataset.subject = template.subject;
+
+      updateEmailLink();
+
+      document.getElementById('letterOverlay').classList.add('letter-overlay--active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function updateEmailLink() {
+      var emailBtn = document.getElementById('emailBtn');
+      var body = document.getElementById('letterBody').value;
+      var subject = emailBtn.dataset.subject;
+      var email = emailBtn.dataset.email;
+      emailBtn.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    function closeLetter() {
+      document.getElementById('letterOverlay').classList.remove('letter-overlay--active');
+      document.body.style.overflow = '';
+    }
+
+    // Init
+    fetch('data/representatives.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        allReps = data;
+        filterReps();
+      });
+
+    // Search input
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      currentSearch = e.target.value;
+      filterReps();
+    });
+
+    // State filters
+    document.getElementById('stateFilters').addEventListener('click', function(e) {
+      if (!e.target.classList.contains('search__filter')) return;
+      document.querySelectorAll('.search__filter').forEach(function(b) {
+        b.classList.remove('search__filter--active');
+      });
+      e.target.classList.add('search__filter--active');
+      currentState = e.target.dataset.state;
+      filterReps();
+    });
+
+    // Card clicks
+    document.getElementById('resultsGrid').addEventListener('click', function(e) {
+      var card = e.target.closest('.rep-card');
+      if (!card) return;
+      openLetter({
+        name: card.dataset.name,
+        email: card.dataset.email,
+        el: card.dataset.el,
+        state: card.dataset.state,
+        party: card.dataset.party,
+        chamber: card.dataset.chamber,
+        template: card.dataset.template
+      });
+    });
+
+    // Name input updates letter
+    document.getElementById('senderName').addEventListener('input', function(e) {
+      var body = document.getElementById('letterBody');
+      var name = e.target.value || '[Your name]';
+      body.value = body.value.replace(/^(Respectfully,\n).*/m, '$1' + name);
+      updateEmailLink();
+    });
+
+    // Letter body changes update email link
+    document.getElementById('letterBody').addEventListener('input', updateEmailLink);
+
+    // Close modal
+    document.getElementById('letterClose').addEventListener('click', closeLetter);
+    document.getElementById('letterOverlay').addEventListener('click', function(e) {
+      if (e.target === this) closeLetter();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLetter();
+    });
+
+    // Copy button
+    document.getElementById('copyBtn').addEventListener('click', function() {
+      var body = document.getElementById('letterBody');
+      navigator.clipboard.writeText(body.value).then(function() {
+        var btn = document.getElementById('copyBtn');
+        btn.textContent = 'Copied!';
+        btn.classList.add('letter__btn--copied');
+        setTimeout(function() {
+          btn.textContent = 'Copy letter';
+          btn.classList.remove('letter__btn--copied');
+        }, 2000);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
